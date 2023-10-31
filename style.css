@@ -35,12 +35,12 @@ body {
   background-color: slategray;
 }
 
-.equals {
+.equal {
   border: 1px solid darkorchid;
   border-radius: 10px;
 }
 
-.equals:hover {
+.equal:hover {
   background-color: slategray;
 }
 
@@ -72,6 +72,7 @@ body {
 #screen {
   width: 300px;
   border: 1px solid skyblue;
+  border-radius: 10px;
   height: 75px;
   margin: 15px;
   display: flex;
