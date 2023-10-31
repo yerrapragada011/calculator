@@ -1,0 +1,91 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vh;
+  background-color: darkgrey;
+  color: white;
+}
+
+.btn {
+  height: 75px;
+  width: 75px;
+  margin: 15px;
+  font-size: 40px;
+  color: white;
+}
+
+.number {
+  border: 1px solid darkred;
+  border-radius: 10px;
+}
+
+.number:hover {
+  background-color: slategray;
+}
+
+.operator {
+  border: 1px solid steelblue;
+  border-radius: 10px;
+}
+
+.operator:hover {
+  background-color: slategray;
+}
+
+.equals {
+  border: 1px solid darkorchid;
+  border-radius: 10px;
+}
+
+.equals:hover {
+  background-color: slategray;
+}
+
+.decimal {
+  border: 1px solid blueviolet;
+  border-radius: 10px;
+}
+
+.decimal:hover {
+  background-color: slategray;
+}
+
+#clear {
+  border: 1px solid darkmagenta;
+  border-radius: 10px;
+}
+
+#clear:hover {
+  background-color: slategray;
+}
+
+.first-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+#screen {
+  width: 300px;
+  border: 1px solid skyblue;
+  height: 75px;
+  margin: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.previous {
+  font-size: 20px;
+  margin-right: 5px;
+}
+
+.current {
+  font-size: 30px;
+  margin-right: 5px;
+}
