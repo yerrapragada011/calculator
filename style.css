@@ -77,6 +77,15 @@ body {
   background-color: black;
 }
 
+#negative {
+  border: 2px solid black;
+  border-radius: 10px;
+}
+
+#negative:hover {
+  background-color: black;
+}
+
 .first-row {
   display: flex;
   justify-content: center;
