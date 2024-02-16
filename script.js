@@ -70,7 +70,9 @@ document.addEventListener('DOMContentLoaded', function () {
 })
 
 function handleNumber(num) {
-  if (currentValue.length <= 5) {
+  if (currentValue === '0') {
+    currentValue = num
+  } else if (currentValue.length <= 5) {
     currentValue += num
   }
 }
