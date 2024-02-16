@@ -1,7 +1,6 @@
 let previousValue = ''
 let currentValue = ''
 let operator = ''
-let operatorSet = false
 
 document.addEventListener('DOMContentLoaded', function () {
   let clear = document.querySelector('#clear')
@@ -24,12 +23,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
   operators.forEach((op) =>
     op.addEventListener('click', function (e) {
-      if (operatorSet) {
+      if (previousValue && previousScreen.textContent != '') {
         calculate()
-        operatorSet = false
       }
       handleOperator(e.target.textContent)
-      operatorSet = true
       previousScreen.textContent = previousValue + ' ' + operator
       currentScreen.textContent = currentValue
     })
