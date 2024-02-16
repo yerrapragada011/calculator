@@ -133,7 +133,9 @@ function addDecimal() {
 }
 
 function makePercent() {
-  currentValue *= 0.01
+  if (currentValue && currentValue != 0) {
+    currentValue *= 0.01
+  }
 }
 
 function convertToNegative() {
