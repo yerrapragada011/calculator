@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
   let clear = document.querySelector('#clear')
   let equal = document.querySelector('.equal')
   let decimal = document.querySelector('.decimal')
+  let percent = document.querySelector('#percent')
 
   let numbers = document.querySelectorAll('.number')
   let operators = document.querySelectorAll('.operator')
@@ -53,6 +54,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
   decimal.addEventListener('click', function () {
     addDecimal()
+    currentScreen.textContent = currentValue
+  })
+
+  percent.addEventListener('click', function () {
+    makePercent()
+    currentScreen.textContent = currentValue
   })
 })
 
@@ -115,4 +122,8 @@ function addDecimal() {
   if (!currentValue.includes('.')) {
     currentValue += '.'
   }
+}
+
+function makePercent() {
+  currentValue *= 0.01
 }
