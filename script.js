@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   operators.forEach((op) =>
     op.addEventListener('click', function (e) {
-      if (previousValue && previousScreen.textContent != '') {
+      if (previousValue && currentValue) {
         calculate()
       }
       handleOperator(e.target.textContent)
