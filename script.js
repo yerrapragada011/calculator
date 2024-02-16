@@ -135,5 +135,7 @@ function makePercent() {
 }
 
 function convertToNegative() {
-  currentValue *= -1
+  if (currentValue != 0) {
+    currentValue = -Math.abs(currentValue)
+  }
 }
