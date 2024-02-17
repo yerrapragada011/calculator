@@ -46,6 +46,15 @@ document.addEventListener('DOMContentLoaded', function () {
       operator = ''
       previousScreen.textContent = ''
       currentScreen.textContent = '0'
+    } else if (
+      previousScreen.textContent.includes(operator) &&
+      currentScreen.textContent == ''
+    ) {
+      previousValue = ''
+      currentValue = ''
+      operator = ''
+      previousScreen.textContent = ''
+      currentScreen.textContent = '0'
     } else {
       currentValue = ''
       currentScreen.textContent = '0'
