@@ -17,6 +17,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
   numbers.forEach((number) =>
     number.addEventListener('click', function (e) {
+      if (previousScreen.textContent != '') {
+        clear.classList.add('adjust-font')
+        clear.innerHTML = 'C'
+      }
       handleNumber(e.target.textContent)
       currentScreen.textContent = currentValue
     })
@@ -36,17 +40,24 @@ document.addEventListener('DOMContentLoaded', function () {
   )
 
   clear.addEventListener('click', function () {
-    previousValue = ''
-    currentValue = ''
-    operator = ''
-    previousScreen.textContent = currentValue
-    currentScreen.textContent = 0
+    if (previousScreen.textContent != '' && currentScreen.textContent == '0') {
+      previousValue = ''
+      currentValue = ''
+      operator = ''
+      previousScreen.textContent = ''
+      currentScreen.textContent = '0'
+    } else {
+      currentValue = ''
+      currentScreen.textContent = '0'
+      clear.innerHTML = 'A/C'
+    }
   })
 
   equal.addEventListener('click', function () {
     if (currentValue != '' && previousValue != '') {
       calculate()
       previousScreen.textContent = ''
+      clear.innerHTML = 'A/C'
       if (previousValue.length <= 5) {
         currentScreen.textContent = previousValue
       } else {
