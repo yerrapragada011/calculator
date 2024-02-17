@@ -102,7 +102,6 @@ function calculate() {
 
   previousValue = roundNumber(previousValue)
   previousValue = previousValue.toString()
-  currentValue = currentValue.toString()
 }
 
 function add() {
