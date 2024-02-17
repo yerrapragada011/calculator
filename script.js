@@ -24,12 +24,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
   operators.forEach((op) =>
     op.addEventListener('click', function (e) {
-      if (previousScreen.textContent != '') {
-        calculate()
+      if (currentScreen.textContent != 0 && currentScreen.textContent != '.') {
+        if (previousScreen.textContent != '') {
+          calculate()
+        }
+        handleOperator(e.target.textContent)
+        previousScreen.textContent = previousValue + ' ' + operator
+        currentScreen.textContent = currentValue
       }
-      handleOperator(e.target.textContent)
-      previousScreen.textContent = previousValue + ' ' + operator
-      currentScreen.textContent = currentValue
     })
   )
 
@@ -38,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function () {
     currentValue = ''
     operator = ''
     previousScreen.textContent = currentValue
-    currentScreen.textContent = currentValue
+    currentScreen.textContent = 0
   })
 
   equal.addEventListener('click', function () {
@@ -65,6 +67,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   negative.addEventListener('click', function () {
     convertToNegative()
+    currentValue = currentValue.toString()
     currentScreen.textContent = currentValue
   })
 })
@@ -133,13 +136,19 @@ function addDecimal() {
 }
 
 function makePercent() {
-  if (currentValue && currentValue != 0) {
+  if (currentValue != 0 && currentValue != '.') {
     currentValue *= 0.01
+  } else if (currentValue == 0) {
+    currentScreen.textContent = 0
   }
 }
 
 function convertToNegative() {
-  if (currentValue != 0) {
+  if (Math.sign(currentValue) == -1) {
+    currentValue = Math.abs(currentValue)
+  } else if (currentValue != 0 && currentValue != '.') {
     currentValue = -Math.abs(currentValue)
+  } else if (currentValue == 0) {
+    currentScreen.textContent = 0
   }
 }
