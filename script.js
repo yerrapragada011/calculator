@@ -63,7 +63,11 @@ document.addEventListener('DOMContentLoaded', function () {
   })
 
   equal.addEventListener('click', function () {
-    if (currentValue != '' && previousValue != '') {
+    if (
+      currentValue != '' &&
+      previousValue != '' &&
+      currentScreen.textContent > 0
+    ) {
       calculate()
       previousScreen.textContent = ''
       clear.innerHTML = 'A/C'
@@ -78,6 +82,7 @@ document.addEventListener('DOMContentLoaded', function () {
   decimal.addEventListener('click', function () {
     addDecimal()
     currentScreen.textContent = currentValue
+    clear.innerHTML = 'C'
   })
 
   percent.addEventListener('click', function () {
