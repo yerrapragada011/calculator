@@ -66,7 +66,8 @@ document.addEventListener('DOMContentLoaded', function () {
     if (
       currentValue != '' &&
       previousValue != '' &&
-      currentScreen.textContent > 0
+      currentScreen.textContent != '' &&
+      currentScreen.textContent != '.'
     ) {
       calculate()
       previousScreen.textContent = ''
